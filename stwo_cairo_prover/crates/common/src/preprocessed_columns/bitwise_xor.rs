@@ -76,7 +76,7 @@ pub mod tests {
     const LOG_SIZE: u32 = 8;
     use crate::preprocessed_columns::bitwise_xor::BitwiseXor;
     use crate::preprocessed_columns::preprocessed_trace::PreProcessedColumn;
-    use crate::prover_types::simd::N_LANES;
+    use crate::prover_types::simd_lanes::N_LANES;
 
     #[test]
     fn test_packed_at_bitwise_xor() {
