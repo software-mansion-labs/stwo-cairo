@@ -11,7 +11,7 @@ use stwo_constraint_framework::preprocessed_columns::PreProcessedColumnId;
 
 use super::preprocessed_trace::PreProcessedColumn;
 use super::preprocessed_utils::SIMD_ENUMERATION_0;
-use crate::prover_types::simd::{LOG_N_LANES, N_LANES};
+use crate::prover_types::simd_lanes::{LOG_N_LANES, N_LANES};
 
 /// A table of a,b,c, where a,b,c are integers and a ^ b = c.
 ///
