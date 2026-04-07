@@ -1,13 +1,13 @@
 [workspace]
 members = [
-    "crates/adapter",
-    "crates/prover",
-    "crates/cairo-serialize",
-    "crates/cairo-serialize-derive",
-    "crates/utils",
-    "crates/common",
-    "crates/cairo-air",
-    "crates/dev_utils",
+  "crates/adapter",
+  "crates/prover",
+  "crates/cairo-serialize",
+  "crates/cairo-serialize-derive",
+  "crates/utils",
+  "crates/common",
+  "crates/cairo-air",
+  "crates/dev_utils",
 ]
 resolver = "2"
 
@@ -20,16 +20,18 @@ repository = "https://github.com/starkware-libs/stwo-cairo"
 [workspace.dependencies]
 indexmap = "2.2.6"
 bincode = "1.3"
-bzip2 = { version = "0.5.0", default-features = false, features = ["libbz2-rs-sys"] }
+bzip2 = { version = "0.5.0", default-features = false, features = [
+  "libbz2-rs-sys",
+] }
 bytemuck = { version = "1.20.0", features = ["derive"] }
-cairo-lang-casm = "2.17.0-rc.0"
-cairo-lang-runner = "2.17.0-rc.0"
-cairo-lang-executable = "2.17.0-rc.0"
-cairo-lang-utils = "2.17.0-rc.0"
+cairo-lang-casm = "2.17.0"
+cairo-lang-runner = "2.17.0"
+cairo-lang-executable = "2.17.0"
+cairo-lang-utils = "2.17.0"
 cairo-vm = { version = "3.0.0", features = [
-    "extensive_hints",
-    "mod_builtin",
-    "clap",
+  "extensive_hints",
+  "mod_builtin",
+  "clap",
 ], default-features = false }
 clap = { version = "4.3.10", features = ["derive"] }
 env_logger = { version = "0.11.5", default-features = false }
@@ -46,11 +48,11 @@ sonic-rs = "0.3.17"
 starknet-curve = "0.6.0"
 starknet-ff = "0.3.7"
 starknet-types-core = { version = "=0.2.4", features = [
-    "hash",
-    "prime-bigint",
-    "serde",
-    "curve",
-    "num-traits",
+  "hash",
+  "prime-bigint",
+  "serde",
+  "curve",
+  "num-traits",
 ] }
 stwo-cairo-prover = { path = "crates/prover", version = "~1.0.0" }
 stwo-cairo-utils = { path = "crates/utils", version = "~1.0.0" }
