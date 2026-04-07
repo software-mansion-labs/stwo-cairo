@@ -28,7 +28,7 @@ cairo-lang-casm = "2.17.0"
 cairo-lang-runner = "2.17.0"
 cairo-lang-executable = "2.17.0"
 cairo-lang-utils = "2.17.0"
-cairo-vm = { version = "3.0.0", features = [
+cairo-vm = { version = "3.2.0", features = [
   "extensive_hints",
   "mod_builtin",
   "clap",
