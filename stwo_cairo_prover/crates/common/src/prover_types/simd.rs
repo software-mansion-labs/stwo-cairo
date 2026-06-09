@@ -491,12 +491,12 @@ pub trait EqExtend {
 impl EqExtend for PackedM31 {
     fn eq(&self, other: Self) -> PackedBool {
         PackedBool {
-            value: self
-                .into_simd()
-                .simd_eq(other.into_simd())
-                .to_int()
-                .bitand(Simd::splat(1))
-                .cast(),
+            value: Simd::from_array(
+                self.into_simd()
+                    .simd_eq(other.into_simd())
+                    .to_array()
+                    .map(|b| b as i32),
+            ),
         }
     }
 }

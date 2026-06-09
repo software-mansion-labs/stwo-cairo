@@ -47,6 +47,10 @@ impl PreProcessedTraceVariant {
             PreProcessedTraceVariant::CanonicalSmall => PreProcessedTrace::canonical_small(),
         }
     }
+
+    pub fn n_columns(&self) -> usize {
+        self.to_preprocessed_trace().columns.len()
+    }
 }
 
 pub trait PreProcessedColumn: Send + Sync {

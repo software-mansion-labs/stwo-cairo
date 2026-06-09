@@ -50,8 +50,8 @@ impl AddressToId {
         self.data.resize(new_len, value);
     }
 
-    pub fn array_chunks<const N: usize>(&self) -> impl Iterator<Item = &[u32; N]> {
-        self.data.array_chunks::<N>()
+    pub fn array_chunks<const N: usize>(&self) -> impl Iterator<Item = &[u32; N]> + '_ {
+        self.data.chunks_exact(N).map(|s| s.try_into().unwrap())
     }
 }
 
@@ -145,7 +145,7 @@ impl ClaimGenerator {
         let id_it = self
             .address_to_raw_id
             .array_chunks::<N_LANES>()
-            .map(|&chunk| unsafe { PackedM31::from_simd_unchecked(Simd::from_array(chunk)) });
+            .map(|chunk| unsafe { PackedM31::from_simd_unchecked(Simd::from_array(*chunk)) });
         let multiplicities = self.multiplicities.into_simd_vec();
 
         for (i, (id, multiplicity)) in zip(id_it, multiplicities).enumerate() {
